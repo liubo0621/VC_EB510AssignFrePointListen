@@ -14,4 +14,62 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\AssignFrePointListen\AssignFrePointListen\SocketClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdSock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateCmdSock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateUdpSock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="eb200udpsock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sound.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="udpexample.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wavfile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Controller.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdSock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateCmdSock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateUdpSock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="eb200udpsock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sound.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wavfile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UdpExample.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
