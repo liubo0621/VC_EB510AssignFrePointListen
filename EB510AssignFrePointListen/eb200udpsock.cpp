@@ -2680,7 +2680,7 @@ EXCEPTIONS:
 }
 
 /* FUNCTION ********************************************************************/
-void CEB200UdpSock::SetAFRecording(char *pcFilename)
+void CEB200UdpSock::SetAFRecording(char *pcFilename, unsigned __int64 waveFileTime)
 /*
 SPECIFICATION:
 PARAMETERS:
@@ -2690,9 +2690,10 @@ RETURN_VALUES:
 EXCEPTIONS:
 ********************************************************************************/
 {
-    m_pctIQFile->SetFilename(pcFilename);
-    m_bAFRecording = true;
+    m_pctIQFile->SetFilename(pcFilename, waveFileTime);
+	m_waveFileTime = waveFileTime;
 
+	m_bAFRecording = true;
     m_bRaw = false;
 }
 
@@ -2732,6 +2733,9 @@ EXCEPTIONS:
     int rcvlen = 1;
     int curlen, reqlen, datlen;
 
+	time(&m_RecordingTime);
+	time_t temp2 = (time_t)m_waveFileTime;
+
     // alloc some space for receiving datagrams
     char *pData = new char[0x100000];
     EB200_DATAGRAM_TYPE *pDGram = (EB200_DATAGRAM_TYPE *)pData;
@@ -2739,6 +2743,21 @@ EXCEPTIONS:
     // loop until we receive 0 bytes or get an error
     while (rcvlen > 0)
     {
+		//check recording time, if grater than waveFile time then stop thread
+		if (m_waveFileTime > 0)
+		{
+			// check if recording limit is reached
+			time_t temp;
+			time(&temp);
+			
+			if ((temp - m_RecordingTime) > temp2)
+			{
+				// stop recording
+				CloseTrace();
+			}
+		}
+
+
         // receiving is done here
         bool bIsEB200DGram;
         bIsEB200DGram = false;

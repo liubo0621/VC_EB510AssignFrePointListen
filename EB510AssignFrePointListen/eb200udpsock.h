@@ -413,7 +413,7 @@ public:
 
     virtual void    SetIFRecording(char *pcFilename, bool bRaw, DWORDLONG dwlRecordingTime);
     virtual void    SetCSRecording(char *pcFilename);
-    virtual void    SetAFRecording(char *pcFilename);
+    virtual void    SetAFRecording(char *pcFilename, unsigned __int64 waveFileTime = 0);
 
 protected:
             void    fprint_short_formated(short pData);
@@ -562,6 +562,7 @@ protected: // Members
            int              m_nDFPanPackets;
            int              m_nPHDPackets;
            unsigned long    m_oldtime;
+		   unsigned __int64 m_waveFileTime;
            int              m_nCount;
            int              m_nChannels;
            int              m_nTotalLen;
@@ -570,6 +571,7 @@ protected: // Members
            unsigned short   m_flags;
            short            m_kFactor;
            char             m_sDemod[8];
+		   time_t           m_RecordingTime;
            DWORDLONG  m_nIFSampleCounter;
            DWORDLONG  m_nIFStartTimestamp;
            DWORDLONG  m_nIFSampleRate;

@@ -42,7 +42,6 @@ void Controller::regulatingRevevierFrequency(char* frequence, const char* receiv
 		char fre[1024] = {0};
 		sprintf(fre, "FREQ %s\n", frequence);
 		printf("%s", fre);
-		printf("frequence size = %d", strlen(fre));
 		send(sockClient, fre, strlen(fre), 0);
 		send(sockClient, "BAND 150 khz\n", 13, 0);
 		send(sockClient, "DEM AM\n", 7, 0);

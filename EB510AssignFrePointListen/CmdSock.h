@@ -88,6 +88,7 @@ protected:
             unsigned       m_unPort;
             unsigned       m_unDDC;
             unsigned       m_unAudioMode;
+			unsigned __int64   m_waveFileTime;
 
             double         m_lfFmax;
 

@@ -102,6 +102,7 @@ EXCEPTIONS:
     m_dwlRecordingTime = 0;
     m_ulRemoteAddress = 0;
     m_nPort = 0;
+	m_waveFileTime = 0;
 
     m_lfFmax = 0.0;
 
@@ -176,6 +177,7 @@ EXCEPTIONS:
                 bCmdLineOK = false;
 //              if (m_unAudioMode == 0)
 //                  m_unAudioMode = 12;
+				m_waveFileTime = atoi(argv[++param]);
             }
             else
                 bCmdLineOK = false;
@@ -494,7 +496,7 @@ EXCEPTIONS:
         if ( m_pcCSFile )    m_pTracSock->SetCSRecording(m_pcCSFile);
 
         /* WAV File Recording? */
-        if ( m_pcWAVFile )   m_pTracSock->SetAFRecording(m_pcWAVFile);
+        if ( m_pcWAVFile )   m_pTracSock->SetAFRecording(m_pcWAVFile, m_waveFileTime);
 
         /* call socket reception routine */
         m_pTracSock->Init();
