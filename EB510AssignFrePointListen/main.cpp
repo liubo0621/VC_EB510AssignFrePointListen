@@ -7,17 +7,12 @@ int main() {
 	cout << "start..." << endl;
 
 	Controller* controller = new Controller();
-	controller->regulatingRevevierFrequency("140E3", "192.168.10.52", 5555);
+	controller->regulatingRevevierFrequency("140E3", "192.168.10.52", 5556);
 
-	char* argvs[] = { "exe","-am","1", "-af", "d:\\test.wav", "10", "192.168.10.52" };
-
-	for (char * argv : argvs)
-	{
-		printf("%s\n", argv);
-	}
+	char* argvs[] = { "exe","-am","1", "-p","5556", "-af", "d:\\test2.wav", "10", "192.168.10.52" };
 
 	UdpExample* udpexample = new UdpExample();
-	udpexample->udpMain(7, argvs);
+	udpexample->udpMain(9, argvs);
 
 
 	return 0;

@@ -33,25 +33,22 @@ JNIEXPORT void JNICALL Java_com_client_DealTask_doTask(JNIEnv *env, jobject obj,
 	const char* path = env->GetStringUTFChars(filePath, 0);
 	const char* fileTime = env->GetStringUTFChars(fileTotalTime, 0);
 
-	printf("in c++   ip = %s, port = %d\n", ip, receiverPort);
-
 	char* t_path = new char[strlen(path) + 1];
 	char* t_fileTime = new char[strlen(fileTime) + 1];
 	char* t_ip = new char[strlen(ip) + 1];
-	
+	char* t_port = new char[6];
+
 	strcpy(t_path, path);
 	strcpy(t_fileTime, fileTime);
 	strcpy(t_ip, ip);
-
-	printf("path = %s\n", t_path);
-
+	sprintf(t_port, "%d", receiverPort);
 	
 	Controller* controller = new Controller();
 	controller->regulatingRevevierFrequency(freq, ip, receiverPort);
 
-	//char* argvs[] = { "exe","-am","1", "-af", "d:\\test.wav", "10", "192.168.10.52" };
-	const int argvsNum = 7;
-	char * argvs[argvsNum] = { "exe","-am","1", "-af", t_path, t_fileTime, t_ip};
+	//char* argvs[] = { "exe","-am","1", "-p","5556", "-af", "d:\\test2.wav", "10", "192.168.10.52" };
+	const int argvsNum = 9;
+	char * argvs[argvsNum] = { "exe","-am","1", "-p", t_port, "-af", t_path, t_fileTime, t_ip};
 
 	UdpExample* udpexample = (UdpExample*)udpExampleAddr;
 	udpexample->udpMain(argvsNum, argvs);
