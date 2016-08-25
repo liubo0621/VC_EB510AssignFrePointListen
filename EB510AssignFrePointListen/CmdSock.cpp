@@ -503,6 +503,15 @@ EXCEPTIONS:
     }
 }
 
+void CCmdSock::stopWrite() 
+{
+	if (m_pTracSock)
+	{
+		m_pTracSock->CloseTrace();
+	}
+
+}
+
 
 /* FUNCTION ********************************************************************/
 unsigned long CCmdSock::SetRSDevice(char *m_pcDeviceAddress, unsigned short nPort)

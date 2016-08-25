@@ -4,6 +4,6 @@
 
 class Controller{
 public:
-	void regulatingRevevierFrequency(char* frequence, const char* receiverIp, int receiverPort);
+	void regulatingRevevierFrequency(const char* frequence, const char* receiverIp, int receiverPort);
 
 };

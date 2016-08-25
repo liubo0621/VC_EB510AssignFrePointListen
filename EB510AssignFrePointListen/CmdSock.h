@@ -43,6 +43,8 @@ public:
     
     virtual void   Init( int argc, char **argv );
     virtual void   DeleteTraces( void );
+	        /* stop current task*/
+	        void   stopWrite();
             int    CheckDeviceErrors( void );
 
             /* get device type */

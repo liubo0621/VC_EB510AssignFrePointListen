@@ -45,6 +45,9 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="com_client_DealTask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.h">
@@ -69,6 +72,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="UdpExample.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="com_client_DealTask.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="jni.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="jni_md.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

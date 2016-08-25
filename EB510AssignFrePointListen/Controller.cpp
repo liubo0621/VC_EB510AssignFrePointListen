@@ -3,7 +3,7 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
-void Controller::regulatingRevevierFrequency(char* frequence, const char* receiverIp, int receiverPort) {
+void Controller::regulatingRevevierFrequency(const char* frequence, const char* receiverIp, int receiverPort) {
 	//加载套接字
 	WSADATA wsaData;//WSADATA结构体中主要包含了系统所支持的Winsock版本信息
 	char buff[1024];

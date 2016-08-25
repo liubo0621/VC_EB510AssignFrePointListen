@@ -126,3 +126,10 @@ EXCEPTIONS:
     return 0;
 }
 
+void UdpExample::stopWrite() {
+	if (pCmdSock)
+	{
+		pCmdSock->stopWrite();
+	}
+}
+
