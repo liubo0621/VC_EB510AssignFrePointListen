@@ -53,11 +53,6 @@ JNIEXPORT void JNICALL Java_com_client_DealTask_doTask(JNIEnv *env, jobject obj,
 	const int argvsNum = 7;
 	char * argvs[argvsNum] = { "exe","-am","1", "-af", t_path, t_fileTime, t_ip};
 
-	for (char * argv : argvs)
-	{
-		printf("%s\n", argv);
-	}
-
 	UdpExample* udpexample = (UdpExample*)udpExampleAddr;
 	udpexample->udpMain(argvsNum, argvs);
 

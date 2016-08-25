@@ -173,7 +173,7 @@ EXCEPTIONS:
     m_nPort = TracPort;
     m_nRecvPort = RecvPort;
     m_bTcp  = bTcp;
-    m_bEnableStatistics = true;
+    m_bEnableStatistics = false;
     m_bStop = FALSE;
     m_bIFRecording = false;
     m_bAFRecording = false;

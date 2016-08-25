@@ -108,7 +108,7 @@ EXCEPTIONS:
     /* The WinSock DLL is acceptable. Proceed. */
 
     /* if receive (only) port was not set -> setup SCPI connection for config. */
-    CCmdSock *pCmdSock = CreateCmdSock();
+    pCmdSock = CreateCmdSock();
     ASSERT(pCmdSock != NULL);
 
     pCmdSock->Init( argc, argv );
