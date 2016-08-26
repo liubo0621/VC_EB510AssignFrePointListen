@@ -37,12 +37,12 @@ JNIEXPORT void JNICALL Java_com_client_DealTask_doTask(JNIEnv *env, jobject obj,
 	char* t_fileTime = new char[strlen(fileTime) + 1];
 	char* t_ip = new char[strlen(ip) + 1];
 	char* t_port = new char[6];
-
+	
 	strcpy(t_path, path);
 	strcpy(t_fileTime, fileTime);
 	strcpy(t_ip, ip);
 	sprintf(t_port, "%d", receiverPort);
-	
+
 	Controller* controller = new Controller();
 	controller->regulatingRevevierFrequency(freq, ip, receiverPort);
 
